@@ -41,7 +41,7 @@ resource "aws_glue_catalog_table" "this" {
     output_format = "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat"
 
     ser_de_info {
-      name                  = "${module.this.namespace}_${var.name}"
+      name                  = "${module.this.namespace}_${replace((var.name), "-", "_")}"
       serialization_library = "org.apache.hadoop.hive.serde2.RegexSerDe"
 
       parameters = {
