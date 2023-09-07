@@ -1,7 +1,11 @@
 variable "access_logs" {
   description = "Map containing access logging configuration for load balancer."
-  type        = map(string)
-  default     = {}
+  type = object({
+    bucket  = string
+    prefix  = string
+    enabled = bool
+  })
+  default = null
 }
 
 variable "access_logs_bucket_id" {
