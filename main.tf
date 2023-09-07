@@ -1,5 +1,5 @@
 locals {
-  access_logs = var.access_logs != {} ? var.access_logs : {
+  access_logs = length(var.access_logs) != 0 ? var.access_logs : {
     bucket  = local.access_logs_bucket_id
     enabled = var.access_logs_enabled
     prefix  = "${module.this.namespace}/${var.name}"
