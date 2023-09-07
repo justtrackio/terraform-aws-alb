@@ -2,18 +2,18 @@ locals {
   access_logs = var.access_logs != {} ? var.access_logs : {
     bucket  = local.access_logs_bucket_id
     enabled = true
-    prefix  = "${var.namespace}/${var.name}"
+    prefix  = "${module.this.namespace}/${var.name}"
   }
-  access_logs_bucket_id = var.access_logs_bucket_id != "" ? var.access_logs_bucket_id : "${var.environment}-alb-logs-${var.aws_account_id_monitoring}-${var.aws_region}"
-  access_logs_prefix    = var.access_logs_prefix != "" ? var.access_logs_prefix : "${var.namespace}_${var.name}"
-  access_logs_location  = "s3://${local.access_logs_bucket_id}/${local.access_logs_prefix}/AWSLogs/${var.aws_account_id}/elasticloadbalancing/${var.aws_region}"
+  access_logs_bucket_id = var.access_logs_bucket_id != "" ? var.access_logs_bucket_id : "${module.this.environment}-alb-logs-${var.aws_account_id_monitoring}-${module.this.aws_region}"
+  access_logs_prefix    = var.access_logs_prefix != "" ? var.access_logs_prefix : "${module.this.namespace}_${var.name}"
+  access_logs_location  = "s3://${local.access_logs_bucket_id}/${local.access_logs_prefix}/AWSLogs/${module.this.aws_account_id}/elasticloadbalancing/${module.this.aws_region}"
 }
 
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "8.7.0"
 
-  name = "${var.environment}-${var.name}"
+  name = "${module.this.environment}-${var.name}"
 
   load_balancer_type = var.load_balancer_type
   ip_address_type    = var.ip_address_type

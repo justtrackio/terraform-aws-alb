@@ -1,8 +1,8 @@
 resource "aws_glue_catalog_table" "aws_glue_catalog_table" {
   provider      = aws.glue
   count         = var.access_logs_enabled ? 1 : 0
-  name          = "${var.namespace}_${replace((module.this.name), "-", "_")}"
-  database_name = "${var.environment}_alb_logs"
+  name          = "${module.this.namespace}_${replace((var.name), "-", "_")}"
+  database_name = "${module.this.environment}_alb_logs"
   table_type    = "EXTERNAL_TABLE"
 
   partition_keys {
@@ -41,7 +41,7 @@ resource "aws_glue_catalog_table" "aws_glue_catalog_table" {
     output_format = "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat"
 
     ser_de_info {
-      name                  = "${module.this.namespace}-${module.this.stage}-${module.this.name}"
+      name                  = "${module.this.namespace}_${var.name}"
       serialization_library = "org.apache.hadoop.hive.serde2.RegexSerDe"
 
       parameters = {
