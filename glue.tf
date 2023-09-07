@@ -1,4 +1,4 @@
-resource "aws_glue_catalog_table" "aws_glue_catalog_table" {
+resource "aws_glue_catalog_table" "this" {
   provider      = aws.glue
   count         = var.access_logs_enabled ? 1 : 0
   name          = "${module.this.namespace}_${replace((var.name), "-", "_")}"
