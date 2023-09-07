@@ -6,33 +6,18 @@ resource "aws_glue_catalog_table" "this" {
   table_type    = "EXTERNAL_TABLE"
 
   partition_keys {
-    name = "year"
-    type = "string"
-  }
-
-  partition_keys {
-    name = "month"
-    type = "string"
-  }
-
-  partition_keys {
     name = "day"
     type = "string"
   }
 
   parameters = {
-    "has_encrypted_data"        = "false",
-    "projection.day.digits"     = "2",
-    "projection.day.range"      = "01,31",
-    "projection.day.type"       = "integer",
-    "projection.enabled"        = "true",
-    "projection.month.digits"   = "2",
-    "projection.month.range"    = "01,12",
-    "projection.month.type"     = "integer",
-    "projection.year.digits"    = "4",
-    "projection.year.range"     = "2023,2099",
-    "projection.year.type"      = "integer",
-    "storage.location.template" = "${local.access_logs_location}/$${year}/$${month}/$${day}"
+    "projection.enabled"           = "true",
+    "projection.day.type"          = "date",
+    "projection.day.range"         = "2023/09/01,NOW", #logging part is implemented at Sept 2023
+    "projection.day.format"        = "yyyy/MM/dd",
+    "projection.day.interval"      = "1",
+    "projection.day.interval.unit" = "DAYS",
+    "storage.location.template"    = "${local.access_logs_location}/$${day}"
   }
 
   storage_descriptor {
@@ -46,7 +31,7 @@ resource "aws_glue_catalog_table" "this" {
 
       parameters = {
         "serialization.format" = 1
-        "input.regex"          = "([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \"([^ ]*) ([^ ]*) (- |[^ ]*)\" \"([^\"]*)\" ([A-Z0-9-]+) ([A-Za-z0-9.-]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" ([-.0-9]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^ ]*)\" \"([^s]+?)\" \"([^s]+)\" \"([^ ]*)\" \"([^ ]*)\""
+        "input.regex"          = "([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \"([^ ]*) (.*) (- |[^ ]*)\" \"([^\"]*)\" ([A-Z0-9-_]+) ([A-Za-z0-9.-]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" ([-.0-9]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^ ]*)\" \"([^s]+?)\" \"([^s]+)\" \"([^ ]*)\" \"([^ ]*)\""
       }
     }
 
