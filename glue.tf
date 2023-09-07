@@ -30,7 +30,7 @@ resource "aws_glue_catalog_table" "this" {
     "projection.month.range"    = "01,12",
     "projection.month.type"     = "integer",
     "projection.year.digits"    = "4",
-    "projection.year.range"     = "2023pre,2099",
+    "projection.year.range"     = "2023,2099",
     "projection.year.type"      = "integer",
     "storage.location.template" = "${local.access_logs_location}/$${year}/$${month}/$${day}"
   }
