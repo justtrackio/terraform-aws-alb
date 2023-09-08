@@ -61,6 +61,12 @@ variable "https_listeners" {
   default     = []
 }
 
+variable "idle_timeout" {
+  description = "The time in seconds that the connection is allowed to be idle."
+  type        = number
+  default     = 60
+}
+
 variable "ip_address_type" {
   description = "The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 and dualstack."
   type        = string

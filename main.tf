@@ -15,19 +15,17 @@ module "alb" {
 
   name = "${module.this.environment}-${var.name}"
 
-  load_balancer_type = var.load_balancer_type
-  ip_address_type    = var.ip_address_type
-
-  vpc_id               = var.vpc_id
-  subnets              = var.subnets
+  access_logs          = var.access_logs_enabled ? local.access_logs : {}
+  extra_ssl_certs      = var.extra_ssl_certs
+  http_tcp_listeners   = var.http_tcp_listeners
+  https_listeners      = var.https_listeners
+  ip_address_type      = var.ip_address_type
+  idle_timeout         = var.idle_timeout
+  load_balancer_type   = var.load_balancer_type
   security_group_rules = var.security_group_rules
-
-  http_tcp_listeners = var.http_tcp_listeners
-  https_listeners    = var.https_listeners
-
-  extra_ssl_certs = var.extra_ssl_certs
+  subnets              = var.subnets
+  vpc_id               = var.vpc_id
 
   tags = module.this.tags
 
-  access_logs = var.access_logs_enabled ? local.access_logs : {}
 }
