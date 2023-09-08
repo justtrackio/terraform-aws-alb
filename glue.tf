@@ -2,7 +2,7 @@ resource "aws_glue_catalog_table" "this" {
   provider      = aws.glue
   count         = var.access_logs_enabled ? 1 : 0
   name          = "${module.this.namespace}_${replace((var.name), "-", "_")}"
-  database_name = "${module.this.environment}_alb_logs"
+  database_name = "${module.this.organizational_unit}_alb_logs"
   table_type    = "EXTERNAL_TABLE"
 
   partition_keys {
