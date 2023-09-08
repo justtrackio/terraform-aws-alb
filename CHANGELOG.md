@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.0...v1.1.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* rename s3 bucket ([#8](https://github.com/justtrackio/terraform-aws-alb/issues/8)) ([1dc6463](https://github.com/justtrackio/terraform-aws-alb/commit/1dc6463c0e7db897d0cedb00bf6a00b8ea69a18b))
+
 ## [1.1.0](https://github.com/justtrackio/terraform-aws-alb/compare/v1.0.0...v1.1.0) (2023-09-08)
 
 
