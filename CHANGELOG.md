@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.1...v1.1.2) (2023-10-13)
+
+
+### Bug Fixes
+
+* disable xff-client-port ([#13](https://github.com/justtrackio/terraform-aws-alb/issues/13)) ([0a08975](https://github.com/justtrackio/terraform-aws-alb/commit/0a089753f726b9e7b5132e7ba23bd0c6c1b1ac79))
+
 ## [1.1.1](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.0...v1.1.1) (2023-09-08)
 
 
