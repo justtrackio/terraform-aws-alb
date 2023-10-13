@@ -1,3 +1,7 @@
+# terraform-aws-alb
+Terraform module which creates an alb
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
@@ -9,7 +13,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws.glue"></a> [aws.glue](#provider\_aws.glue) | 5.15.0 |
+| <a name="provider_aws.glue"></a> [aws.glue](#provider\_aws.glue) | >= 4.59 |
 
 ## Modules
 
@@ -71,3 +75,4 @@
 |------|-------------|
 | <a name="output_lb_dns_name"></a> [lb\_dns\_name](#output\_lb\_dns\_name) | The DNS name of the load balancer |
 | <a name="output_lb_zone_id"></a> [lb\_zone\_id](#output\_lb\_zone\_id) | The zone\_id of the load balancer to assist with creating DNS records |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
