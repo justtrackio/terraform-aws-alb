@@ -32,6 +32,12 @@ variable "aws_account_id_monitoring" {
   default     = null
 }
 
+variable "enable_xff_client_port" {
+  description = "Indicates whether the X-Forwarded-For header should preserve the source port that the client used to connect to the load balancer in application load balancers."
+  type        = bool
+  default     = false
+}
+
 variable "extra_ssl_certs" {
   description = "A list of maps describing any extra SSL certificates to apply to the HTTPS listeners. Required key/values: certificate_arn, https_listener_index (the index of the listener within https_listeners which the cert applies toward)."
   type        = list(map(string))
