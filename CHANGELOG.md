@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.2...v1.1.3) (2023-11-16)
+
+
+### Bug Fixes
+
+* allow ipv6 inside security group ([#17](https://github.com/justtrackio/terraform-aws-alb/issues/17)) ([f5d8285](https://github.com/justtrackio/terraform-aws-alb/commit/f5d8285bacef903aecdf66fa3845228da152952a))
+
 ## [1.1.2](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.1...v1.1.2) (2023-10-13)
 
 
