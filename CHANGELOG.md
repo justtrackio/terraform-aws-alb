@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.3...v1.2.0) (2023-12-14)
+
+
+### Features
+
+* add new outputs for listener arns ([#22](https://github.com/justtrackio/terraform-aws-alb/issues/22)) ([5c938f8](https://github.com/justtrackio/terraform-aws-alb/commit/5c938f8862a9c28bb80f790c65e1bf8065bbc049))
+
 ## [1.1.3](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.2...v1.1.3) (2023-11-16)
 
 
