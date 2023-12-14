@@ -27,6 +27,6 @@ module "alb" {
   subnets                = var.subnets
   vpc_id                 = var.vpc_id
 
-  tags = module.this.tags
+  tags = module.alb_label.tags
 
 }
