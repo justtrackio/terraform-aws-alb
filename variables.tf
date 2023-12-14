@@ -79,6 +79,14 @@ variable "ip_address_type" {
   default     = "dualstack"
 }
 
+variable "label_orders" {
+  type = object({
+    alb = optional(list(string)),
+  })
+  default     = {}
+  description = "Overrides the `labels_order` for the different labels to modify ID elements appear in the `id`"
+}
+
 variable "load_balancer_type" {
   description = "The type of load balancer to create. Possible values are application or network."
   type        = string

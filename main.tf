@@ -13,7 +13,7 @@ module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "8.7.0"
 
-  name = "${module.this.environment}-${var.name}"
+  name = module.alb_label.id
 
   access_logs            = var.access_logs_enabled ? local.access_logs : {}
   enable_xff_client_port = var.enable_xff_client_port
