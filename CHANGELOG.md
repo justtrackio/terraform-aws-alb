@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/justtrackio/terraform-aws-alb/compare/v1.2.0...v1.2.1) (2023-12-15)
+
+
+### Bug Fixes
+
+* updated naming to match label_order ([#21](https://github.com/justtrackio/terraform-aws-alb/issues/21)) ([8274501](https://github.com/justtrackio/terraform-aws-alb/commit/8274501dc069ce41f2255afcae32386b740e7731))
+
 ## [1.2.0](https://github.com/justtrackio/terraform-aws-alb/compare/v1.1.3...v1.2.0) (2023-12-14)
 
 
