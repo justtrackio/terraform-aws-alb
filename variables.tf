@@ -44,6 +44,12 @@ variable "extra_ssl_certs" {
   default     = []
 }
 
+variable "http_tcp_listener_rules" {
+  description = "A list of maps describing the Listener Rules for this ALB. Required key/values: actions, conditions. Optional key/values: priority, http_tcp_listener_index (default to http_tcp_listeners[count.index])"
+  type        = any
+  default     = []
+}
+
 variable "http_tcp_listeners" {
   description = "A list of maps describing the HTTP listeners or TCP ports for this ALB. Required key/values: port, protocol. Optional key/values: target_group_index (defaults to http_tcp_listeners[count.index])"
   type        = any
@@ -59,6 +65,12 @@ variable "http_tcp_listeners" {
       }
     }
   ]
+}
+
+variable "https_listener_rules" {
+  description = "A list of maps describing the Listener Rules for this ALB. Required key/values: actions, conditions. Optional key/values: priority, https_listener_index (default to https_listeners[count.index])"
+  type        = any
+  default     = []
 }
 
 variable "https_listeners" {
