@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/justtrackio/terraform-aws-alb/compare/v1.2.1...v1.2.2) (2024-01-26)
+
+
+### Bug Fixes
+
+* allow setting of listener rules ([#25](https://github.com/justtrackio/terraform-aws-alb/issues/25)) ([8e85388](https://github.com/justtrackio/terraform-aws-alb/commit/8e853885b3704d76ff2e2df8e2e7ddcc84ba04ac))
+
 ## [1.2.1](https://github.com/justtrackio/terraform-aws-alb/compare/v1.2.0...v1.2.1) (2023-12-15)
 
 
