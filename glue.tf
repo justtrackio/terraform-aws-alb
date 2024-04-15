@@ -1,8 +1,13 @@
+locals {
+  glue_table_name    = replace(module.glue_label.id, "-", "_")
+  glue_database_name = var.glue_database_name != null ? var.glue_database_name : "${module.this.organizational_unit}_alb_logs"
+}
+
 resource "aws_glue_catalog_table" "this" {
   provider      = aws.glue
   count         = var.access_logs_enabled ? 1 : 0
-  name          = "${module.this.namespace}_${replace((var.name), "-", "_")}"
-  database_name = "${module.this.organizational_unit}_alb_logs"
+  name          = local.glue_table_name
+  database_name = local.glue_database_name
   table_type    = "EXTERNAL_TABLE"
 
   partition_keys {

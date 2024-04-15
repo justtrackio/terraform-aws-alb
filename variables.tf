@@ -32,6 +32,12 @@ variable "aws_account_id_monitoring" {
   default     = null
 }
 
+variable "glue_database_name" {
+  type        = string
+  description = "Set which database name for glue tables should be used, uses {module.this.organizational_unit}_alb_logs by default"
+  default     = null
+}
+
 variable "enable_xff_client_port" {
   description = "Indicates whether the X-Forwarded-For header should preserve the source port that the client used to connect to the load balancer in application load balancers."
   type        = bool
@@ -93,7 +99,8 @@ variable "ip_address_type" {
 
 variable "label_orders" {
   type = object({
-    ec2 = optional(list(string)),
+    ec2  = optional(list(string)),
+    glue = optional(list(string), ["namespace", "environment", "name"]),
   })
   default     = {}
   description = "Overrides the `labels_order` for the different labels to modify ID elements appear in the `id`"
