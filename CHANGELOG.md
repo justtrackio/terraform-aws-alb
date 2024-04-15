@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/justtrackio/terraform-aws-alb/compare/v1.2.2...v1.3.0) (2024-04-15)
+
+
+### Features
+
+* allow to define glue label order ([#33](https://github.com/justtrackio/terraform-aws-alb/issues/33)) ([8f35acd](https://github.com/justtrackio/terraform-aws-alb/commit/8f35acd9a9d48f2a5ac9b88e6fbb4715a283c8c1))
+
 ## [1.2.2](https://github.com/justtrackio/terraform-aws-alb/compare/v1.2.1...v1.2.2) (2024-01-26)
 
 
