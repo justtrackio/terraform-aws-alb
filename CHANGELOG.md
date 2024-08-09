@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/justtrackio/terraform-aws-alb/compare/v1.3.0...v1.3.1) (2024-08-09)
+
+
+### Bug Fixes
+
+* update glue schema and SerDe name ([#47](https://github.com/justtrackio/terraform-aws-alb/issues/47)) ([6e4a16e](https://github.com/justtrackio/terraform-aws-alb/commit/6e4a16e2b1226e187c963e85e4654d52c6190655))
+
 ## [1.3.0](https://github.com/justtrackio/terraform-aws-alb/compare/v1.2.2...v1.3.0) (2024-04-15)
 
 
