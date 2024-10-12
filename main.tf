@@ -11,7 +11,7 @@ locals {
 
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
-  version = "8.7.0"
+  version = "9.11.1"
 
   name = module.alb_label.id
 
